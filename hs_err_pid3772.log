@@ -1,0 +1,53 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffbbe02dfa0, pid=3772, tid=7976
+#
+# JRE version: OpenJDK Runtime Environment (15.0.1+9) (build 15.0.1+9-18)
+# Java VM: OpenJDK 64-Bit Server VM (15.0.1+9-18, mixed mode, sharing, tiered, compressed oops, g1 gc, windows-amd64)
+# Problematic frame:
+# C  [atio6axx.dll+0x287dfa0]
+#
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   https://bugreport.java.com/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Dfile.encoding=windows-1252 -Duser.country=US -Duser.language=en -Duser.variant educanet.Main
+
+Host: Intel(R) Core(TM) i5-9400F CPU @ 2.90GHz, 6 cores, 15G,  Windows 10 , 64 bit Build 19041 (10.0.19041.928)
+Time: Fri May 28 10:37:37 2021 Central Europe Daylight Time elapsed time: 43.480314 seconds (0d 0h 0m 43s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000020f347e0390):  JavaThread "main" [_thread_in_native, id=7976, stack(0x0000005d1fb00000,0x0000005d1fc00000)]
+
+Stack: [0x0000005d1fb00000,0x0000005d1fc00000],  sp=0x0000005d1fbfe9b8,  free space=1018k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [atio6axx.dll+0x287dfa0]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+J 734  org.lwjgl.opengl.GL15C.nglBufferData(IJJI)V (0 bytes) @ 0x0000020f45cc437e [0x0000020f45cc4320+0x000000000000005e]
+J 815% c2 educanet.Main.main([Ljava/lang/String;)V (284 bytes) @ 0x0000020f45cdb610 [0x0000020f45cdb240+0x00000000000003d0]
+v  ~StubRoutines::call_stub
+
+siginfo: EXCEPTION_ACCESS_VIOLATION (0xc0000005), data execution prevention violation at address 0x00007ffbbe02dfa0
+
+
+Register to memory mapping:
+
+RIP=0x00007ffbbe02dfa0 atio6axx.dll
+RAX=0x00007ffbbdf85d78 atio6axx.dll
+RBX=0x0000020f64264ec0 points into unknown readable memory: 0x0000020f63a69910 | 10 99 a6 63 0f 02 00 00
+RCX=0x0000020f63930440 points into unknown readable memory: 0x00007ffbbdf85d78 | 78 5d f8 bd fb 7f 00 00
+RDX=0x0000020f5c5f89d0 points into unknown readable memory: 0x00007ffbbdf84c88 | 88 4c f8 bd fb 7f 00 00
+RSP=0x0000005d1fbfe9b8 is pointing into the stack for thread: 0x0000020f347e0390
+RBP=0x0000020f5c4f2ba0 points into unknown readable memory: 0x0000020f5c447630 | 30 76 44 5c 0f 02 00 00
+RSI=0x0000020f5a39c200 points into unknown readable memory: 0x00007ffbbdf71dd0 | d0 1d f7 bd fb 7f 00 00
+RDI=0x0000020f63a69910 points into unknown readable memory: 0x0000020f63a39aa0 | a0 9a a3 63 0f 02 00 00
+R8 =
